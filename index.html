@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<head>
+  <center><title style="padding-top: 50px;">GRADING SYSTEM</title></center>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body style="background-image: url(images/Testing.jpg); width: 100%;">
+<div ng-app="gradeapp" ng-init="marks=0" ng-controller="gradectrl" style="style="padding-top: 50px;>
+<h1>gradeapp</h1>
+<label>Enter marks</label>
+<input type="number" ng-model="marks">
+<h3>Your grade {{grade}} for {{marks}}Marks</h3>
+</div>
+<script type="text/javascript">
+  var app = angular.module("gradeapp",[]);
+  app.controller("gradectrl", function($scope){
+       $scope.grade = '';
+       $scope.$watch('marks',function(){
+      if($scope.marks>=80){
+            $scope.grade="A";
+        }
+        else if($scope.marks>=70){
+            $scope.grade="B+";
+        }
+        else if($scope.marks>=60){
+            $scope.grade="B-";
+        }
+        else if($scope.marks>=50){
+            $scope.grade="C+";
+        }
+        else if($scope.marks>=40){
+            $scope.grade="C";
+        }
+          else if($scope.marks>=30){
+            $scope.grade="D+";
+        }
+        else if($scope.marks>=25){
+            $scope.grade="D+";
+        }
+        else if($scope.marks>=20){
+            $scope.grade="E";
+        }
+
+       });
+
+       
+
+  });
+
+</script>
+   <script type="js/bootstrap.min.js"></script>
+    <script type="js/bootstrap.js"></script>
+     <script type="js/jquery-3.2.1.slim.min.js"></script>
+</body>
+</html>
